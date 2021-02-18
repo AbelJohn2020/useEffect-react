@@ -4,7 +4,25 @@ function LifeCycle() {
     const [firstCounter, setFirstCounter] = useState(0);
     const [secondCounter, setSecondCounter] = useState(0);
 
-    
+    useEffect(() => {
+        console.log('useEffect []')
+    }, []);
+
+    useEffect(() => {
+        console.log('UseEfect no dependency');
+    });
+
+    useEffect(()=> {
+        console.log(`useEffect first counter [${firstCounter}]`)
+    }, [firstCounter]);
+
+    useEffect(() => {
+        console.log(`useEffect second counter [${secondCounter}]`)
+    }, [secondCounter]);
+
+    useEffect(() => {
+        console.log(`useEffect [${firstCounter}, ${secondCounter}]`)
+    }, [firstCounter, secondCounter])
 
     return (
         <div>
