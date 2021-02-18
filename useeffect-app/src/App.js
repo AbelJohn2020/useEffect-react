@@ -1,10 +1,12 @@
 import React from 'react';
-import LifeCycle from './LifeCycle';
+import FetchCard from './FetchCard';
+// import LifeCycle from './LifeCycle';
 
 function App() {
   return (
     <div >
-      <LifeCycle />
+      {/* <LifeCycle /> */}
+      <FetchCard />
     </div>
   );
 }
