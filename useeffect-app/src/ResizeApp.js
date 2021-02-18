@@ -6,7 +6,13 @@ const ResizeApp = () => {
     const isMobile = windowWith < 768
 
     useEffect( () => {
-        window.addEventListener('resize', () => setWindowWith(window.innerWidth));
+        const handleResize = () => setWindowWith(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+        
+        // send in any of your effects a function, and this will allows us to handle what's known as "clean up"
+        return () =>{
+            window.removeEventListener('resize', handleResize);
+        }
     }, [])
 
     return (
